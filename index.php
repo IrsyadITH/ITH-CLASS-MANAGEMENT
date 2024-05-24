@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if(!isset($_SESSION["user_id"])){
+        header("login.html");
+            exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,18 +24,21 @@
                 <h2>CM</h2>
             </div>
             <ul>
-                <li><a href="index.html">Beranda</a></li>
+                <li><a href="index.php">Beranda</a></li>
                 <li><a href="booking.html">Pesan Ruangan</a></li>
                 <li><a href="jadwal.html">Jadwal</a></li>
-                <li><a href=""><i class="fa-solid fa-user" style="font-size: 2vw;"></i></a></li>
+                <li><a href="user.php"><i class="fa-solid fa-user" style="font-size: 2vw;"></i></a></li>
             </ul>
         </div>
         <div class="navbar-container-right">
-            <img src="Logo_Kampus_Merdeka_Kemendikbud.png" alt="">
-            <img src="ITH.jpg" alt="">
+            <img src="assets/Logo_Kampus_Merdeka_Kemendikbud.png" alt="KAMPUSMERDEKA">
+            <img src="assets/ITH.jpg" alt="ITHLOGO">
         </div>
     </nav>
 
+    <div class="welcome">
+        <h1>SELAMAT DATANG, <span><?php echo $_SESSION['nama'];?></span></h1>
+    </div>
     <div class="intro">
         <h1 class="title">ITH CLASS MANAGEMENT</h1>
         <p>
@@ -42,15 +53,18 @@
         <p>
             Dengan demikian, ITH CLASS MANAGEMENT bukan hanya sekadar alat administratif, tetapi juga merupakan sarana untuk meningkatkan pengalaman belajar secara keseluruhan di lingkungan pendidikan tinggi. Dengan menghilangkan hambatan administratif dan menciptakan lingkungan belajar yang lebih terstruktur dan produktif, platform ini berpotensi untuk meningkatkan prestasi akademik serta kepuasan mahasiswa dan dosen dalam proses pembelajaran.
         </p>
-        <button><a href="jadwal.html">Lihat Jadwal</a></button>
-        <button><a href="booking.html">Pesan Ruangan</a></button>
+        <div class="buttons">
+            <button><a href="jadwal.html">Lihat Jadwal</a></button>
+            <button><a href="booking.html">Pesan Ruangan</a></button>
+        </div>
     </div>
+
     <footer class="copyright">Copyright 2024 © ITHCM. Developed By ITHCM TEAM</footer>
     <footer class="contact">
-        <h6>Contact Us: </h6>
-        <a href="" class="fa-brands fa-instagram"></a>
-        <a href="" class="fa-brands fa-whatsapp"></a>
-        <a href="" class="fa-solid fa-envelope"></a>
+        <h6>Contact Us:</h6>
+        <a href="#" class="fa-brands fa-instagram"></a>
+        <a href="#" class="fa-brands fa-whatsapp"></a>
+        <a href="#" class="fa-solid fa-envelope"></a>
     </footer>
 </body>
 </html>
