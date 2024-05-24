@@ -4,19 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>BERANDA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>BOOKING</title>
 </head>
 <body>
-    <nav>
-        <div class="brand">
-            <h1>ITH</h1>
-            <h2>CM</h2>
+    <nav class="navbar-container">
+        <div class="navbar-container-left">
+            <div class="brand">
+                <h1>ITH</h1>
+                <h2>CM</h2>
+            </div>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="booking.html">Pesan Ruangan</a></li>
+                <li><a href="jadwal.html">Jadwal</a></li>
+                <li><a href="user.html"><i class="fa-solid fa-user" style="font-size: 2vw;"></i></a></li>
+            </ul>
         </div>
-        <ul>
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="booking.html">Pesan Ruangan</a></li>
-            <li><a href="">Jadwal</a></li>
-        </ul>
+        <div class="navbar-container-right">
+            <img src="assets/Logo_Kampus_Merdeka_Kemendikbud.png" alt="KAMPUSMERDEKA">
+            <img src="assets/ITH.jpg" alt="ITHLOGO">
+        </div>
     </nav>
+
+    <div class="booking-container" id="booking">
+        <fieldset class="important">
+            <legend>PENTING!</legend>
+            <h6>HARAP UNTUK MEMPERHATIKAN HAL-HAL DIBAWAH INI SEBELUM MEMESAN RUANGAN!</h6>
+            <ol>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident, quas?</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, dolor.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, distinctio?</li>
+            </ol>
+        </fieldset>
+        <div class="inputuser">
+            <form>
+                <fieldset>
+                    <legend>PESAN RUANGAN</legend>
+                    <div>
+                        <label for="nama">Nama:</label>
+                        <input type="text" id="nama" name="nama">
+                    </div>
+                    <div>
+                        <label for="ruangan">Kode Ruangan:</label>
+                        <select name="ruangan" id="ruangan">
+                            <option value="R101">R-101</option>
+                            <option value="R102">R-102</option>
+                            <option value="R103">R-103</option>
+                            <option value="R104">R-104</option>
+                            <option value="R202">R-202</option>
+                            <option value="R203">R-203</option>
+                            <option value="R204">R-204</option>
+                            <option value="R205">R-205</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="matkul">Mata Kuliah:</label>
+                        <input type="text" name="matkul" id="matkul">
+                    </div>
+                    <div>
+                        <label for="dosen">Dosen Pengampu Mata kuliah:</label>
+                        <input type="text" name="dosen" id="dosen">
+                    </div>
+                    <div>
+                        <label for="jadwal">Masukkan Jadwal:</label>
+                        <input type="time" name="jadwal" id="jadwal">
+                    </div>
+
+                    <button type="button" id="pesan">PESAN</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <footer class="copyright">Copyright 2024 © ITHCM. Developed By ITHCM TEAM</footer>
+    <footer class="contact">
+        <h6>Contact Us:</h6>
+        <a href="#" class="fa-brands fa-instagram"></a>
+        <a href="#" class="fa-brands fa-whatsapp"></a>
+        <a href="#" class="fa-solid fa-envelope"></a>
+    </footer>
 </body>
 </html>
