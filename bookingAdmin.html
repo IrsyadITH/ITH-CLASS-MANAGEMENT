@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="navbarAdmin.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>BOOKING</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#navbar").load("navbarAdmin.html");
+        $("#footer").load("footer.html");
+    });
+    </script>
+</head>
+<body>
+
+    <div id="navbar"></div>
+    <div class="booking-container" id="booking">
+        <fieldset class="important">
+            <legend>PENTING!</legend>
+            <h6>HARAP UNTUK MEMPERHATIKAN HAL-HAL DIBAWAH INI SEBELUM MEMESAN RUANGAN!</h6>
+            <ol>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident, quas?</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, dolor.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, distinctio?</li>
+            </ol>
+        </fieldset>
+        <div class="inputuser">
+            <form>
+                <fieldset>
+                    <legend>PESAN RUANGAN</legend>
+                    <div>
+                        <label for="nama">Nama:</label>
+                        <input type="text" id="nama" name="nama">
+                    </div>
+                    <div>
+                        <label for="ruangan">Kode Ruangan:</label>
+                        <select name="ruangan" id="ruangan">
+                            <option value="R101">R-101</option>
+                            <option value="R102">R-102</option>
+                            <option value="R103">R-103</option>
+                            <option value="R104">R-104</option>
+                            <option value="R202">R-202</option>
+                            <option value="R203">R-203</option>
+                            <option value="R204">R-204</option>
+                            <option value="R205">R-205</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="matkul">Mata Kuliah:</label>
+                        <input type="text" name="matkul" id="matkul">
+                    </div>
+                    <div>
+                        <label for="dosen">Dosen Pengampu Mata kuliah:</label>
+                        <input type="text" name="dosen" id="dosen">
+                    </div>
+                    <div>
+                        <label for="jadwal">Masukkan Jadwal:</label>
+                        <input type="time" name="jadwal" id="jadwal">
+                    </div>
+
+                    <button type="button" id="pesan">PESAN</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+</body>
+</html>

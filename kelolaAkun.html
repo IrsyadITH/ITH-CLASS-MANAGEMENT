@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="navbarAdmin.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="fontawesome/css/fontawesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>BERANDA</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#navbar").load("navbarAdmin.html");
+            $("#footer").load("footer.html");
+
+            $("form").submit(function(event){
+                event.preventDefault(); // Prevent default form submission
+
+                $.ajax({
+                    url: 'tambahAkun.php',
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        alert(response); // Display success or error message
+                    },
+                    error: function() {
+                        alert('Error occurred while adding user.');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="form-container">
+        <h2>Tambahkan Pengguna Baru</h2>
+        <form>
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="jurusan">Jurusan:</label>
+            <input type="text" id="jurusan" name="jurusan" required>
+
+            <label for="prodi">Program Studi:</label>
+            <input type="text" id="prodi" name="prodi" required>
+
+            <label for="kodeuser">Kode User:</label>
+            <input type="text" id="kodeuser" name="kodeuser" required>
+
+            <label for="status">Role:</label>
+            <select id="status" name="status" required>
+                <option value="Admin">Admin</option>
+                <option value="Dosen">Dosen</option>
+                <option value="Mahasiswa">Mahasiswa</option>
+            </select>
+
+            <button type="submit">Add User</button>
+        </form>
+    </div>
+    <div id="footer"></div>
+</body>
+</html>

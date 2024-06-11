@@ -1,24 +1,28 @@
 <?php
+    error_reporting(0);
+    ini_set('display_errors', 0);
     session_start();
-    if(!isset($_SESSION["user_id"])){
-        header("login.html");
+        if (!isset($_SESSION['user_id'])) {
+            header("Location: login.html");
             exit();
-    }
+        }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=".css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="navbarAdmin.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="fontawesome/css/fontawesome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <title>BERANDA</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
     $(document).ready(function(){
-        $("#navbar").load("navbar.html");
+        $("#navbar").load("navbarAdmin.html");
         $("#footer").load("footer.html");
     });
     </script>

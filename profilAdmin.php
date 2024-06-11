@@ -1,39 +1,48 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: login.html");
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="navbarAdmin.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="profileAdmin.css">
+    <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
     $(document).ready(function(){
-        $("#navbar").load("navbar.html");
+        $("#navbar").load("navbarAdmin.html");
         $("#footer").load("footer.html");
     });
     </script>
 </head>
 <body>
     <div id="navbar"></div>
+
     <div class="user-container">
         <h2><?php echo $_SESSION['nama'];?></h2>
-        <div class="data-user">
-            <h4>User address</h4>
-            <p style="margin-left: 10px;"><?php echo $_SESSION['email'];?></p>
-        </div>
-        <div class="data-user">
-            <h4>KodeAdmin</h4>
-            <p style="margin-left: 10px;"><?php echo $_SESSION['kodeuser'];?></p>
-        </div>
-        <div class="fitur-admin">
-            <button><a href="">Kelola Jadwal</a></button>
-            <button><a href="">Kelola Akun</a></button>
-            <button><a href="">Kelola Ruangan</a></button>
-        </div>
-        <div class="button-container">
-            <button type="submit" id="change-pass" class="account"><a href="">Ganti Password</a></button>
-            <button type="submit" id="logout" class="account"><a href="logout.php">Log out</a></button>
+        <div>
+            <div class="data-user">
+                <h4>Email address</h4>
+                <p style="margin-left: 10px;"><?php echo $_SESSION['email'];?></p>
+            </div>
+            <div class="data-user">
+                <h4>Kode Admin</h4>
+                <p style="margin-left: 10px;"><?php echo $_SESSION['kodeuser'];?></p>
+            </div .button-container>
+
+            <button type="submit"><a href="">Ganti Password</a></button>
+            <button type="submit"><a href="logout.php">Log Out</a></button>
         </div>
     </div>
     <div id="footer"></div>

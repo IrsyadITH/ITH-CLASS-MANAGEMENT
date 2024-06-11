@@ -97,7 +97,7 @@ body {
     border-bottom-right-radius: 100px;
     height: 14vh;
     padding: 0 20px;
-    width: 50%;
+    width: 70%;
     display: flex;
     align-items: center;
 }
@@ -380,23 +380,6 @@ footer.contact a {
     color: rgb(13, 74, 114);
 }
 
-.navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-}
-
-.navbar-container-left {
-    display: flex;
-    align-items: center;
-}
-
-.brand h1, .brand h2 {
-    margin: 0;
-}
 
 ul {
     list-style-type: none;
