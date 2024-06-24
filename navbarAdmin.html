@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .container-fluid {
+            background-color: rgb(13, 74, 114);
+        }
+
+        .nav-item:hover {
+            background-color: rgba(19, 98, 151, 0.712);
+            border-radius: 10px;
+        }
+
+        .active {
+            background-color: rgba(19, 98, 151, 0.712);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="navbar-brand" href="#" style="margin-right:40px; margin-left: 20px;">
+                <h style="font-weight: bold; color: orange;">ITH</h><h5 style="font-weight: bold; color: rgb(255, 255, 255);">CM</h5>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="color: white;">
+                <span class="navbar-toggler-icon" style="color: white;"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav" >
+                <ul class="navbar-nav">
+                    <li class="nav-item" style="margin-right: 10px;"> 
+                        <a class="nav-link"  href="berandaAdmin.php" style="color: white;">Beranda</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 10px;">
+                        <a class="nav-link" href="pesanruanganAdmin.php" style="color: white;">Perkuliahan</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 10px;">
+                        <a class="nav-link" href="manajemenpengguna.php" tabindex="-1" aria-disabled="true" style="color: white;">Pengguna</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 10px;">
+                        <a class="nav-link" href="profilAdmin.php" tabindex="-1" aria-disabled="true" style="color: white;">Profil</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            // Cek localStorage untuk tautan aktif
+            const activeLink = localStorage.getItem('activeNavLink');
+            if (activeLink) {
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === activeLink) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    // Simpan tautan aktif di localStorage
+                    localStorage.setItem('activeNavLink', link.getAttribute('href'));
+                });
+            });
+        });
+    </script>
+</body>
+</html>
