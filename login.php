@@ -9,18 +9,22 @@
         die(json_encode(["status" => "error", "message" => "Connection failed: " . $conn->connect_error]));
     }
 
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $result = $conn->query("SELECT * FROM user WHERE email='$email' AND password='$password'");
+    $kodeuser = $_POST['kodeuser'];  // Ambil kodeuser dari form login
+    $password = $_POST['password'];  // Ambil password dari form login
+
+    // Query untuk memeriksa apakah ada kombinasi kodeuser dan password yang sesuai
+    $result = $conn->query("SELECT * FROM user WHERE kodeuser='$kodeuser' AND password='$password'");
 
     if ($result->num_rows == 0) {
-        $check_email = $conn->query("SELECT * FROM user WHERE email='$email'");
-        if ($check_email->num_rows == 0) {
+        // Jika tidak ada hasil, periksa apakah kodeuser ada di database
+        $check_kodeuser = $conn->query("SELECT * FROM user WHERE kodeuser='$kodeuser'");
+        if ($check_kodeuser->num_rows == 0) {
             echo json_encode(["status" => "error", "message" => "Akun tidak terdaftar"]);
         } else {
-            echo json_encode(["status" => "error", "message" => "Password Tidak Cocok"]);
+            echo json_encode(["status" => "error", "message" => "Password tidak cocok"]);
         }
     } else {
+        // Jika ada hasil, berarti login berhasil
         session_start();
 
         while ($row = $result->fetch_assoc()) {
@@ -32,7 +36,7 @@
             $_SESSION['jurusan'] = $row['jurusan'];
             $_SESSION['prodi'] = $row['prodi'];
         }
-        echo json_encode(["status" => "success", "message" => "Login successful"]);
+        echo json_encode(["status" => "success", "message" => "Login berhasil"]);
     }
 
     $conn->close();

@@ -42,7 +42,7 @@ if (!isset($_SESSION['user_id'])) {
                             <input type="text" class="form-control" id="email" value="<?php echo $_SESSION['email'];?>" readonly>
                         </div>
                         <div class="mb-3">
-                            <label for="kodeuser" class="form-label">NIM:</label>
+                            <label for="kodeuser" class="form-label">NIDN:</label>
                             <input type="text" class="form-control" id="kodeuser" value="<?php echo $_SESSION['kodeuser'];?>" readonly>
                         </div>
                         <div class="mb-3">
@@ -59,14 +59,13 @@ if (!isset($_SESSION['user_id'])) {
             </div>
         </div>
     </div>
-    
 
     <div id="footer"></div>
 
     <script>
         $(document).ready(function(){
-            $("#navbar").load("navbarAdmin.html");
-            $("#footer").load("Footer.html");
+            $("#navbar").load("navbarDosen.html");
+            $("#footer").load("footer.html");
         });
     </script>
 </body>

@@ -26,7 +26,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     echo '<table class="table table-bordered table-striped">';
     echo '<thead style="background-color: rgb(13, 74, 114); color: white; text-align: center;">';
-    echo '<tr><th>Nama</th><th>Kelas</th><th>Kode Ruangan</th><th>Mata Kuliah</th><th>Dosen</th><th>Hari</th><th>Jadwal Masuk</th><th>Jadwal Keluar</th></tr>';
+    echo '<tr><th>Nama</th><th>Kelas</th><th>Kode Ruangan</th><th>Mata Kuliah</th><th>Dosen</th><th>Hari</th><th>Jadwal Masuk</th><th>Jadwal Keluar</th><th>Aksi</th></tr>';
     echo '</thead>';
     echo '<tbody>';
     while($row = $result->fetch_assoc()) {
@@ -39,6 +39,13 @@ if ($result->num_rows > 0) {
         echo '<td>' . htmlspecialchars($row['hari']) . '</td>';
         echo '<td>' . htmlspecialchars($row['jadwalMasuk']) . '</td>';
         echo '<td>' . htmlspecialchars($row['jadwalKeluar']) . '</td>';
+        
+        // Tombol hapus untuk setiap entri jadwal
+        echo '<td>';
+        echo '<button class="btn btn-danger btn-sm" onclick="hapusJadwal(' . $row['id'] . ')">Hapus</button>';
+        echo '</td>';
+        
+        echo '</tr>';
     }
     echo '</tbody>';
     echo '</table>';

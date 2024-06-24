@@ -43,7 +43,7 @@
             Dengan demikian, ITH CLASS MANAGEMENT bukan hanya sekadar alat administratif, tetapi juga merupakan sarana untuk meningkatkan pengalaman belajar secara keseluruhan di lingkungan pendidikan tinggi. Dengan menghilangkan hambatan administratif dan menciptakan lingkungan belajar yang lebih terstruktur dan produktif, platform ini berpotensi untuk meningkatkan prestasi akademik serta kepuasan mahasiswa dan dosen dalam proses pembelajaran.
         </p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button class="btn btn-primary me-md-2" type="button"><a href="pesanruangan.php" style="color: white; text-decoration: none;">Pesan Ruangan</a></button>
+            <button class="btn btn-primary me-md-2" type="button" style="background-color: rgb(13, 74, 114);"><a href="pesanruanganAdmin.php" style="color: white; text-decoration: none;">Pesan Ruangan</a></button>
         </div>
     </div>
     <div id="footer"></div>

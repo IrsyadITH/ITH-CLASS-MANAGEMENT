@@ -31,7 +31,7 @@
         // Function to load schedule
         function loadSchedule() {
             $.ajax({
-                url: 'tampilkanjadwalAdmin.php', // Sesuaikan dengan file PHP yang menampilkan jadwal dari database
+                url: 'tampilkanjadwal.php', // Sesuaikan dengan file PHP yang menampilkan jadwal dari database
                 type: 'GET',
                 success: function(response) {
                     $("#jadwal").html(response); // Tampilkan jadwal yang sudah diperbarui
@@ -61,7 +61,7 @@
         }
 
         $(document).ready(function(){
-            $("#navbar").load("navbaradmin.html");
+            $("#navbar").load("navbarDosen.html");
             $("#footer").load("footer.html");
             
             // Function to load schedule initially
